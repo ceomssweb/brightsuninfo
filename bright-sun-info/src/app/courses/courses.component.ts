@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-
-  constructor() { }
+  public usersForm: any;
+  constructor(
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  userFormData() {
+    // this.usersForm = this.fb.group({
+    //   fullName: ['', [Validators.required, Validators.minLength(2)]],
+    //   mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+    // });
+  }
+
+  applyCourses(){
+
   }
 
 }

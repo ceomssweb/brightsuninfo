@@ -14,25 +14,63 @@
               <div class="row">
                 <div class="col">
                   <div class="services-button nav-products" (click)="externalApps()">
-                    <div class="title" title="Go to Documents Application">
+                    <!-- <div class="title" title="Go to Documents Application">
                       Documents
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <bs-carousel-header></bs-carousel-header>
         </div>
-        <div class="col-md-6">
-          <mat-card>
+        <div class="col-md-8">
+          <!-- <mat-card>
             <mat-card-title class="h2 py-4">Main Objective:</mat-card-title>
             <p class="decorated"><span class="fw-bold">Bright Sun Documents</span> is the learning environment where you can learn How to do document writing and registering the documents. </p>
             <p class="decorated">Government registered documents are the main source of proof and promises with which one can claim their ownership over the agricultural land, Plots, comercial building, leases, contracts and many more.</p>
             <p class="decorated">Here we provide a plateform in a wide range to learn all about document writing and the procedures of registering the documents of various types.</p>
             <p class="decorated">Also here in Bright Sun Documents, we will provide you a real time field experience of handling the clients in an end-to-end process.</p>
-          </mat-card>
+          </mat-card> -->
+          
+            <div class="row">
+              <div class="col-md-6 fw-bold px-4">
+                <mat-card>
+                <h3 class="text-success">Online Document Writting</h3>
+                <p class="my-4">
+                  <span class="mx-2"><em class="pi pi-check-circle text-success"></em></span>We will be providing documents for all kind of your registration process.
+                </p>
+                <p class="my-4">
+                  <span class="mx-2"><em class="pi pi-check-circle text-success"></em></span>Documents can be provided online in multiple languages(Tamil or English) as per the requirement.
+                </p>
+                <p class="my-4">
+                  Click the below button and submit your details and documents need to be processed for the registration.
+                </p>
+                <div class="text-center my-3">
+                <button mat-button class="btn btn-success">Send Documents</button>
+              </div>
+            </mat-card>
+              </div>
+              <div class="col-md-6 fw-bold px-4">
+              <mat-card>
+                <h3 class="text-warning">Become a Document Writter</h3>
+                <p class="my-4">
+                  <span class="mx-2"><em class="pi pi-check-circle text-warning"></em></span>Learn through our coaching center to know all about documents writting and registration process.
+                </p>
+                <p class="my-4">
+                  <span class="mx-2"><em class="pi pi-check-circle text-warning"></em></span>Learn document writting in multiple languages(Tamil and English).
+                </p>
+                <p class="my-4">
+                  Click the below button to enroll into our new courses and become a document writter.
+                </p>
+                <div class="text-center my-3">
+                <a class="btn btn-warning text-white" [routerLink]="['/courses']">Join Courses</a>
+              </div>
+            </mat-card>
+              </div>
+            </div>
+          
         </div>
         </div>
         </div>
