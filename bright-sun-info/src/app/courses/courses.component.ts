@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'bs-courses',
   templateUrl: './courses.component.html',
@@ -10,6 +11,7 @@ export class CoursesComponent implements OnInit {
   public usersForm!: UntypedFormGroup;
   constructor(
     public fb: UntypedFormBuilder,
+    public toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +26,18 @@ export class CoursesComponent implements OnInit {
   }
 
   applyCourses(){
-
+        // const storage = getStorage();
+        //   const storageRef = ref(storage, 'users-documents/' + this.userApi.userPath + '/' + this.userPhone + '/' + this.file[i].name);
+          
+        //     this.userApi.AddUsers(this.usersForm.value, this.fileNames, this.finalDoc);
+            
+        //     this.toastr.success(
+        //       this.usersForm.controls['fullName'].value + ' successfully added!'
+        //     );
+            this.ResetForm();
+    
   }
-
+  ResetForm(){
+    this.usersForm.reset();
+  }
 }
