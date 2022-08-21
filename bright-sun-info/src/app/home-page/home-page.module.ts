@@ -4,6 +4,7 @@ import {MatCardModule} from '@angular/material/card';
 import { HomePageRoutingModule } from './home-page-routing.module';
 import { HomePageComponent } from './home-page.component';
 import { SharedModule } from './../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { SharedModule } from './../shared/shared.module';
     CommonModule,
     HomePageRoutingModule,
     SharedModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class HomePageModule { }
