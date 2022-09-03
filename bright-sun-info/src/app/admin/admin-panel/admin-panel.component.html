@@ -27,9 +27,13 @@
                                     <div class="col-md-12 bg-heading py-2">
                                         <h4 class="text-white">Details</h4>
                                     </div>
-                                    <div class="col-md-12 px-3 py-2 chat-container">
+                                    <div class="col-md-12 px-3 py-2 chat-container" *ngIf="showload">
+                                        Loading Content Please wait!
+                                    </div>
+                                    <div class="col-md-12 px-3 py-2 chat-container" *ngIf="!showload">
+                                        
                                         <div class="d-block" *ngFor="let item of getActDoc">
-                                                <div class="p-2 msg-align-right d-inline-block">
+                                                <div class="p-2 msg-align-right d-inline-block mb-2 m-2">
                                                     <div *ngIf="item.includes('.pdf')">
                                                         <img class="view-file" src="/assets/images/pdf-file.png" alt="{{item}}" title="{{item}}"/>
                                                       </div>
@@ -38,8 +42,6 @@
                                                       </div>
                                                 </div>
                                         </div>
-                                        
-                                       
                                     </div>
                                 </div>
                                 <div class="row">
@@ -54,7 +56,25 @@
                    </div>
                 </p-tabPanel>
                 <p-tabPanel header="Courses Request">
-                    Content 2
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-12 bg-heading py-2">
+                                    <h4 class="text-white">Courses Request</h4>
+                                </div>
+                                <div class="col-md-12 main-list-container">
+                                    <div *ngFor="let item of courseList" class="row border mb-2 cursor-pointer" >
+                                        <div class="col-md-6 py-2">
+                                            <span class="mx-2">{{item.fullName}}</span>
+                                        </div>
+                                        <div class="col-md-6 py-2">
+                                            <span class="mx-2">{{item.mobileNumber}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </p-tabPanel>
             </p-tabView>
         </div>

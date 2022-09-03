@@ -3,7 +3,7 @@ import { getDownloadURL, getStorage, ref } from 'firebase/storage';
 import { ToastrService } from 'ngx-toastr';
 import {MenuItem} from 'primeng/api';
 import { UsersDocuments } from 'src/app/services/document.sevices';
-import { UsersDoc } from 'src/app/services/users';
+import { UsersDoc, Users } from 'src/app/services/users';
 
 @Component({
   selector: 'bs-admin-panel',
@@ -14,15 +14,17 @@ export class AdminPanelComponent implements OnInit {
 
   items: MenuItem[] = [];
   userList: UsersDoc[] = [];
+  courseList: Users[] = [];
   fileNames: String[] = [];
   getActDoc: String[] = [];
-  getRowDoc: String[] = []
+  getRowDoc: String[] = [];
+  showload:boolean = false;
 
   constructor(public userApi: UsersDocuments,
     public toastr: ToastrService,) { }
 
   showDetails(key: any, user: any){
-    debugger;
+    this.showload = true;
     this.getActDoc = [];
     this.getRowDoc = Object.values(user.docDownloaded);
     const storage = getStorage();
@@ -32,6 +34,7 @@ export class AdminPanelComponent implements OnInit {
       getDownloadURL(storageRef)
   .then((url) => {
     this.getActDoc.push(url);
+    this.showload = false;
   })
   .catch((error) => {
     // A full list of error codes is available at
@@ -67,12 +70,20 @@ export class AdminPanelComponent implements OnInit {
   let s = this.userApi.GetUsersDocList();
   s.snapshotChanges().subscribe(data => {
     this.userList = [];
-    debugger;
     data.forEach(item => {
       let getItem: any = item.payload.toJSON(); 
       getItem['key'] = item.key;
       this.userList.push(getItem as UsersDoc);
       this.fileNames.push(getItem.documentName);
+    });
+  });
+  let c = this.userApi.GetUsersList();
+  c.snapshotChanges().subscribe(data => {
+    this.courseList = [];
+    data.forEach(item => {
+      let getItem: any = item.payload.toJSON(); 
+      getItem['key'] = item.key;
+      this.courseList.push(getItem as UsersDoc);
     });
   });
   }
