@@ -11,7 +11,7 @@ export class CoursesComponent implements OnInit {
 
   public usersForm!: UntypedFormGroup;
   userPhone: string = '';
-
+  clientName: string = '';
   constructor(
     public fb: UntypedFormBuilder,
     public userApi: UsersDocuments,
@@ -40,13 +40,21 @@ export class CoursesComponent implements OnInit {
 
   applyCourses(){
         this.userPhone = this.mobileNumber?.value;
-          
+        this.clientName = this.fullName?.value;
+        if(this.clientName){
+          if(!this.usersForm.invalid){
         this.userApi.AddUsers(this.usersForm.value);
             
         this.toastr.success(
           this.usersForm.controls['fullName'].value + ' successfully added!'
         );
         this.ResetForm();
+          }else{
+            alert("Please add your phone number");
+          }
+        }else{
+          alert("Please enter your name");
+        }
   }
   ResetForm(){
     this.usersForm.reset();

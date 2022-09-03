@@ -8,7 +8,8 @@ export interface UsersDoc {
    key: String;
    fullName: String;
    mobileNumber: Number,
-   filename: String
+   filename: String,
+   originalName: String
 }
 
 export interface Columns {

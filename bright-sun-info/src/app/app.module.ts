@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,6 +42,7 @@ const storage = getStorage(app);
       positionClass :'toast-bottom-right'
     }),
     HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

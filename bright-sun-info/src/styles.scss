@@ -15,6 +15,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   overflow-y: auto;
 }
 
+.body-admin-height{
+  height: calc(100vh - 147px);
+  overflow-y: auto;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+  &:hover{
+    background-color: rgba(168, 223, 240, 0.788);
+  }
+}
+
 h1,h2,h3,h4,h5{
   margin-bottom: 0.3rem !important;
   line-height: initial !important;

@@ -23,11 +23,12 @@ export class UsersDocuments {
       mobileNumber: Users.mobileNumber
     });
   }
-  AddUsersDoc(Users: UsersDoc, fileNames:any) {
+  AddUsersDoc(Users: UsersDoc, fileNames:any, originalName:any) {
     this.MultiUsersRef.push({
       fullName: Users.fullName,
       mobileNumber: Users.mobileNumber,
-      documentName: fileNames
+      documentName: fileNames,
+      docDownloaded: originalName
     });
   }
   GetUsersList() {

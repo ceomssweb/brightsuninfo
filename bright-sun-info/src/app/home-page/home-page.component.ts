@@ -98,7 +98,7 @@ export class HomePageComponent implements OnInit {
           );
           
           if(i == (this.file.length - 1)){
-            this.userApi.AddUsersDoc(this.usersDocForm.value, this.fileNames);
+            this.userApi.AddUsersDoc(this.usersDocForm.value, this.fileNames, this.fileNames);
             
             this.toastr.success(
               this.usersDocForm.controls['fullName'].value + ' successfully added!'
