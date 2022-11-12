@@ -1,7 +1,8 @@
 export interface Users {
    key: String;
    fullName: String;
-   mobileNumber: Number
+   mobileNumber: Number;
+   getTime: String
 }
 
 export interface UsersDoc {

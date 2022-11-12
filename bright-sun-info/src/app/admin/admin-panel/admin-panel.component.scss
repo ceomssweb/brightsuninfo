@@ -29,6 +29,16 @@
     border-radius: 10px;
     border: 1px solid #ccc;
 }
+.pdf-container{
+    height: 50px;
+    width: 200px;
+    .view-file{
+        height: 50px;
+        float: left;
+        background-color: rgb(248, 44, 44);
+        color: white;
+    }
+}
 .view-file{
     height: 200px;
 }

@@ -17,10 +17,11 @@ export class UsersDocuments {
   constructor(private db: AngularFireDatabase) {}
   // Create Users
   adminUser: String = 'saravanan039@hotmail.com';
-  AddUsers(Users: Users) {
+  AddUsers(Users: Users, addTime: any) {
     this.MultiUsersRef.push({
       fullName: Users.fullName,
-      mobileNumber: Users.mobileNumber
+      mobileNumber: Users.mobileNumber,
+      getTime: addTime
     });
   }
   AddUsersDoc(Users: UsersDoc, fileNames:any, originalName:any) {

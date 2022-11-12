@@ -32,15 +32,26 @@
                                     </div>
                                     <div class="col-md-12 px-3 py-2 chat-container" *ngIf="!showload">
                                         
-                                        <div class="d-block" *ngFor="let item of getActDoc">
-                                                <div class="p-2 msg-align-right d-inline-block mb-2 m-2">
-                                                    <div *ngIf="item.includes('.pdf')">
-                                                        <img class="view-file" src="/assets/images/pdf-file.png" alt="{{item}}" title="{{item}}"/>
+                                        <div class="row" *ngFor="let item of getActDoc">
+                                            <div class="col-md-12">
+                                                <div class="msg-align-right cursor-pointer mb-2" (click)="downloadFile(item)">
+                                                    <a href="{{item}}" download target="_blank">
+                                                    <div class="pdf-container" *ngIf="item.includes('.pdf')">
+                                                        <span class="view-file p-2 m-1">
+                                                            .pdf
+                                                        </span>
+                                                        <span class="pt-3 d-inline-block fw-bold">
+                                                            Click to download!
+                                                        </span>
+                                                        <!-- <img src="/assets/images/pdf-file.png" alt="{{item}}" title="{{item}}"/> -->
                                                       </div>
                                                       <div *ngIf="!item.includes('.pdf')">
                                                         <img class="view-file" src="{{item}}" alt="{{item}}" title="{{item}}"/>
                                                       </div>
+                                                    </a>
                                                 </div>
+                                            </div>
+                                                
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +79,10 @@
                                             <span class="mx-2">{{item.fullName}}</span>
                                         </div>
                                         <div class="col-md-6 py-2">
-                                            <span class="mx-2">{{item.mobileNumber}}</span>
+                                            {{item.mobileNumber}}
+                                        </div>
+                                        <div class="col-md-12 py-2">
+                                            {{item.getTime}}
                                         </div>
                                     </div>
                                 </div>

@@ -83,9 +83,11 @@ export class AdminPanelComponent implements OnInit {
     data.forEach(item => {
       let getItem: any = item.payload.toJSON(); 
       getItem['key'] = item.key;
-      this.courseList.push(getItem as UsersDoc);
+      this.courseList.push(getItem as Users);
     });
   });
   }
-
+  downloadFile(getData:any){
+    
+  }
 }

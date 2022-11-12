@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { UsersDocuments } from '../services/document.sevices';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'bs-courses',
   templateUrl: './courses.component.html',
@@ -37,13 +38,17 @@ export class CoursesComponent implements OnInit {
   get mobileNumber() {
     return this.usersForm.get('mobileNumber');
   }
+  datePipe: DatePipe = new DatePipe('en-US');
 
   applyCourses(){
         this.userPhone = this.mobileNumber?.value;
         this.clientName = this.fullName?.value;
         if(this.clientName){
           if(!this.usersForm.invalid){
-        this.userApi.AddUsers(this.usersForm.value);
+            var date = new Date();
+            var transformDate = this.datePipe.transform(date, 'EEEE, dd-MM-yyyy, h:MM:ss a');
+    
+        this.userApi.AddUsers(this.usersForm.value, transformDate);
             
         this.toastr.success(
           this.usersForm.controls['fullName'].value + ' successfully added!'
