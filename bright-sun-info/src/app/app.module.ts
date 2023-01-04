@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { getStorage } from 'firebase/storage';
 import { AngularFireModule } from '@angular/fire/compat';
+import { PrivacyModule } from './privacy/privacy.module';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAnuAN2n29tx5dp7uE5bk9QzwF-a4J4MIU",
@@ -42,6 +43,7 @@ const storage = getStorage(app);
       positionClass :'toast-bottom-right'
     }),
     HttpClientModule,
+    PrivacyModule,
 
   ],
   providers: [],
