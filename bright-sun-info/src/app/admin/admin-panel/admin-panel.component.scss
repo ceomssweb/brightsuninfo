@@ -1,0 +1,59 @@
+.send-icon{
+    top: 0;
+    margin-top: -27px;
+    margin-right: 10px;
+    float: right;
+    font-size: 20px;
+}
+.send-control{
+    padding-right: 70px;
+}
+.main-list-container{
+    height: calc(100vh - 290px);
+    border: 1px solid #ccc;
+    border-radius: 0 !important;
+}
+.chat-container{
+    height: calc(100vh - 340px);
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
+.msg-align-right{
+    float: right;
+    display: block;
+    background-color: beige;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.main-list-container{
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.pdf-container{
+    height: 50px;
+    width: 200px;
+    .view-file{
+        height: 50px;
+        float: left;
+        background-color: rgb(248, 44, 44);
+        color: white;
+    }
+}
+.view-file{
+    height: 200px;
+}
+.picture-item{
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 2px 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    display: inline-block;
+}
+.bg-heading{
+    background-color: rgb(29, 86, 112);
+    h4{
+        font-weight: 700;
+    }
+}

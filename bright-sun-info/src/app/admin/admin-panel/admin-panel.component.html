@@ -1,0 +1,97 @@
+<bs-header></bs-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 body-admin-height">
+            <p-tabView>
+                <p-tabPanel header="Documents Request">
+                   <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12 bg-heading py-2">
+                                <h4 class="text-white">Request</h4>
+                            </div>
+                            <div class="col-md-12 main-list-container">
+                                <div *ngFor="let item of userList" class="row border mb-2 cursor-pointer" >
+                                    <div class="col-md-12 py-3" (click)="showDetails(item.key, item)">
+                                        <span class="picture-item">S</span>
+                                        <span class="mx-2">{{item.fullName}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12 px-3">
+                                <div class="row mb-3">
+                                    <div class="col-md-12 bg-heading py-2">
+                                        <h4 class="text-white">Details</h4>
+                                    </div>
+                                    <div class="col-md-12 px-3 py-2 chat-container" *ngIf="showload">
+                                        Loading Content Please wait!
+                                    </div>
+                                    <div class="col-md-12 px-3 py-2 chat-container" *ngIf="!showload">
+                                        
+                                        <div class="row" *ngFor="let item of getActDoc">
+                                            <div class="col-md-12">
+                                                <div class="msg-align-right cursor-pointer mb-2" (click)="downloadFile(item)">
+                                                    <a href="{{item}}" download target="_blank">
+                                                    <div class="pdf-container" *ngIf="item.includes('.pdf')">
+                                                        <span class="view-file p-2 m-1">
+                                                            .pdf
+                                                        </span>
+                                                        <span class="pt-3 d-inline-block fw-bold">
+                                                            Click to download!
+                                                        </span>
+                                                        <!-- <img src="/assets/images/pdf-file.png" alt="{{item}}" title="{{item}}"/> -->
+                                                      </div>
+                                                      <div *ngIf="!item.includes('.pdf')">
+                                                        <img class="view-file" src="{{item}}" alt="{{item}}" title="{{item}}"/>
+                                                      </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" pInputText class="form-control send-control"/>
+                                        <em class="pi pi-send text-success send-icon"></em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                </p-tabPanel>
+                <p-tabPanel header="Courses Request">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="col-md-12 bg-heading py-2">
+                                    <h4 class="text-white">Courses Request</h4>
+                                </div>
+                                <div class="col-md-12 main-list-container">
+                                    <div *ngFor="let item of courseList" class="row border mb-2 cursor-pointer" >
+                                        <div class="col-md-6 py-2">
+                                            <span class="mx-2">{{item.fullName}}</span>
+                                        </div>
+                                        <div class="col-md-6 py-2">
+                                            {{item.mobileNumber}}
+                                        </div>
+                                        <div class="col-md-12 py-2">
+                                            {{item.getTime}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p-tabPanel>
+            </p-tabView>
+        </div>
+    </div>
+</div>
+<bs-footer></bs-footer>

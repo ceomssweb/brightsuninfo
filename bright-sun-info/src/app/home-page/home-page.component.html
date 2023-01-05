@@ -13,26 +13,116 @@
             <div class="col-md-12 my-2">
               <div class="row">
                 <div class="col">
-                  <div class="services-button nav-products" (click)="externalApps()">
+                  <!-- <div class="services-button nav-products" (click)="externalApps()">
                     <div class="title" title="Go to Documents Application">
                       Documents
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
             <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <bs-carousel-header></bs-carousel-header>
         </div>
-        <div class="col-md-6">
-          <mat-card>
+        <div class="col-md-8">
+          <!-- <mat-card>
             <mat-card-title class="h2 py-4">Main Objective:</mat-card-title>
             <p class="decorated"><span class="fw-bold">Bright Sun Documents</span> is the learning environment where you can learn How to do document writing and registering the documents. </p>
             <p class="decorated">Government registered documents are the main source of proof and promises with which one can claim their ownership over the agricultural land, Plots, comercial building, leases, contracts and many more.</p>
             <p class="decorated">Here we provide a plateform in a wide range to learn all about document writing and the procedures of registering the documents of various types.</p>
             <p class="decorated">Also here in Bright Sun Documents, we will provide you a real time field experience of handling the clients in an end-to-end process.</p>
+          </mat-card> -->
+          
+            <div class="row" >
+              <div class="col-md-6 px-4 mb-2">
+                <mat-card *ngIf="showDocReq">
+                <h3 class="text-success my-2">Send your Documents</h3>
+                <form [formGroup]="usersDocForm" novalidate>
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-12 mb-2">
+                        <label>Full Name: </label>
+                        <input
+                          type="text"
+                          class="form-control green-mat"
+                          formControlName="fullName"
+                          required
+                          pInputText
+                        />
+                      </div>
+                      <div class="col-md-12 mb-2">
+                        <label>Mobile number: </label>
+                        <input
+                          type="text"
+                          class="form-control green-mat"
+                          formControlName="mobileNumber"
+                          required
+                          pInputText
+                        />
+                      </div>
+                      <div class="col-md-12 mb-2">
+                        <label>Upload Required Documents: </label>
+                        <input #fileInput class="form-control mb-2" type="file" 
+                                  (change)="chooseFile($event)" multiple formControlName="addedDocuments">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div class="text-center my-3">
+                <button mat-button class="btn btn-success" [disabled]="!enableAdd" (click)="submitUserData()">Upload Documents</button>
+                <button mat-button class="btn btn-secondary mx-2" (click)="cancelReq()">Cancel</button>
+              </div>
+            </mat-card>
+            <mat-card *ngIf="!showDocReq">
+              <h3 class="text-success">Online Document Writting</h3>
+              <p class="my-4">
+                <span class="mx-2 fw-bold"><em class="pi pi-check-circle text-success"></em></span>Documents of all the kinds of registration will be served online.
+              </p>
+              <p class="my-4">
+                <span class="mx-2 fw-bold"><em class="pi pi-check-circle text-success"></em></span>Documents will be writted in multiple languages(Tamil or English) as per the requirement.
+              </p>
+              <p class="my-4">
+                Please click the below button to submit your details and documents need to be processed for the registration.
+              </p>
+              <div class="text-center my-3">
+              <button mat-button class="btn btn-success" (click)="onSelDoc()">Send Documents</button>
+            </div>
           </mat-card>
+              </div>
+              <div class="col-md-6 px-4 mb-2" *ngIf="!showDocReq">
+              <mat-card>
+                <h3 class="text-warning">Become a Document Writter</h3>
+                <p class="my-4">
+                  <span class="mx-2 fw-bold"><em class="pi pi-check-circle text-warning"></em></span>Learn through our coaching center to know all about documents writting and registration process.
+                </p>
+                <p class="my-4">
+                  <span class="mx-2 fw-bold"><em class="pi pi-check-circle text-warning"></em></span>Learn document writting in multiple languages(Tamil and English).
+                </p>
+                <p class="my-4">
+                  Please click the below button to enroll into our new courses and become a document writter.
+                </p>
+                <div class="text-center my-3">
+                <a class="btn btn-warning text-white" [routerLink]="['/courses']">Join Courses</a>
+              </div>
+            </mat-card>
+            </div>
+            <div class="col-md-6 px-4 mb-2" *ngIf="showDocReq">
+            <mat-card>
+              <h3 class="text-warning">Required Documents</h3>
+              <p class="my-4 fw-bold">
+                <span class="mx-2"><em class="pi pi-check-circle text-warning"></em></span> Patta copy
+              </p>
+              <p class="my-4 fw-bold">
+                <span class="mx-2"><em class="pi pi-check-circle text-warning"></em></span> Aadhaar Card Copy.
+              </p>
+              <p class="my-4 fw-bold">
+                <span class="mx-2"><em class="pi pi-check-circle text-warning"></em></span> 2 Photo copy
+              </p>
+          </mat-card>
+              </div>
+            </div>
+          
         </div>
         </div>
         </div>

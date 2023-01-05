@@ -4,43 +4,88 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-12 py-2">
-          <h1>What we offer!</h1>
+          <h1>Courses Details and Form to join!</h1>
         </div>
       </div>
       <div class="row py-2 body-content-height">
         <div class="col-md-6 px-3">
-
+          <div class="row">
+            <div class="col-md-12">
+              <mat-card>
+                <div class="row">
+                  <form [formGroup]="usersForm" novalidate>
+                  <div class="col-md-12">
+                    <h3 class="mb-4 text-warning">Apply to Join the Courses:</h3>
+                    <div class="row">
+                      <div class="col-md-12 mb-2">
+                        <label>Full Name: </label>
+                        <input
+                          type="text"
+                          class="form-control green-mat"
+                          formControlName="fullName"
+                          required
+                          pInputText
+                        />
+                      </div>
+                      <div class="col-md-12 mb-2">
+                        <label>Mobile number: </label>
+                        <input
+                          type="text"
+                          class="form-control green-mat"
+                          formControlName="mobileNumber"
+                          required
+                          pInputText
+                        />
+                      </div>
+                      <!-- <div class="col-md-12 mb-2">
+                        <label>Upload Required Documents: </label>
+                        <input #fileInput class="form-control mb-2" type="file" 
+                                  (change)="chooseFile($event)" multiple formControlName="addedDocuments">
+                      </div> -->
+                      <div class="col-md-12">
+                        <div class="text-center my-3">
+                          <button mat-button class="btn btn-warning text-white" (click)="applyCourses()">Apply to Join</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </mat-card>
+            </div>
+          </div>
         </div>
         <div class="col-md-6 px-3">
           <mat-list role="list">
+            <h3 class="px-3 mb-2 text-warning">Courses Details:</h3>
             <mat-list-item role="listitem">
               <mat-icon class="list-icon">
-                list
+                <em class="pi pi-check-circle text-warning"></em>
               </mat-icon>
               Teaching how to generate Documents and Contracts.
             </mat-list-item>
             <mat-list-item role="listitem">
-              <mat-icon class="list-icon">list</mat-icon>
+              <mat-icon class="list-icon"><em class="pi pi-check-circle text-warning"></em></mat-icon>
               Teaching all the details about EC, PATTA/CITTA and Certificates required for document/deed registration.
             </mat-list-item>
             <mat-list-item role="listitem">
-              <mat-icon class="list-icon">list</mat-icon>
+              <mat-icon class="list-icon"><em class="pi pi-check-circle text-warning"></em></mat-icon>
               Offering work to get real time experence.
             </mat-list-item>
             <mat-list-item role="listitem">
-              <mat-icon class="list-icon">list</mat-icon>
+              <mat-icon class="list-icon"><em class="pi pi-check-circle text-warning"></em></mat-icon>
               Teaching how to assist in Registering the Documents and Contracts.
             </mat-list-item>
             <mat-list-item role="listitem">
-              <mat-icon class="list-icon">list</mat-icon>
+              <mat-icon class="list-icon"><em class="pi pi-check-circle text-warning"></em></mat-icon>
               Teaching all the methods of writing legal Documents.
             </mat-list-item>
             <mat-list-item role="listitem">
-              <mat-icon class="list-icon">list</mat-icon>
+              <mat-icon class="list-icon"><em class="pi pi-check-circle text-warning"></em></mat-icon>
               You can learn from us to understand the Client needs and offering data rich documentation.
             </mat-list-item>
             <mat-list-item role="listitem">
-              <mat-icon class="list-icon">list</mat-icon>
+              <mat-icon class="list-icon"><em class="pi pi-check-circle text-warning"></em></mat-icon>
               Teaching to make more perfection in clasifing the document types.
             </mat-list-item>
           </mat-list>

@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "5d4607c8-252d-44fa-83d0-39c122f12cca"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -107,6 +110,5 @@
         }
       }
     }
-  },
-  "defaultProject": "bright-sun-info"
+  }
 }

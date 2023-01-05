@@ -1,29 +1,20 @@
 ::ng-deep{
   .mat-list{
-    margin: 30px;
-    .mat-list-item{
-      border-bottom-left-radius: 30px;
+      border-radius: 30px;
+      padding-top: 20px;
       position: relative !important;
-      padding-left: 50px !important;
-      margin-bottom: 40px;
-      box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
-    }
-    .mat-list-item:nth-child(even) {
-      background: rgb(240, 187, 209, 0.3) !important;
-    }
-    .mat-list-item:nth-child(odd) {
       background: rgb(209, 250, 181, 0.3) !important;
-    }
-    .product-icon{
-      border-radius: 50px !important;
-      position: absolute !important;
-      left: -70px !important;
-      top: -30px;
-      padding: 20px;
-      background-color: white;
-      height: 70px;
-      width: 70px;
       box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+   
+    .product-icon{
+      padding: 10px;
+      margin-right: 10px;
+      box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+      em::before{
+        font-size: 16px;
+        position: absolute;
+        margin: -30px 0 0 -5px;
+      }
     }
   }
 }
