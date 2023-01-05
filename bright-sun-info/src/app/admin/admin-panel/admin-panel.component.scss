@@ -50,6 +50,10 @@
     height: 40px;
     font-size: 20px;
     display: inline-block;
+    overflow: hidden;
+    text-overflow: clip;
+    vertical-align: middle;
+    word-wrap: break-word;
 }
 .bg-heading{
     background-color: rgb(29, 86, 112);

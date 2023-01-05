@@ -13,7 +13,7 @@
                             <div class="col-md-12 main-list-container">
                                 <div *ngFor="let item of userList" class="row border mb-2 cursor-pointer" >
                                     <div class="col-md-12 py-3" (click)="showDetails(item.key, item)">
-                                        <span class="picture-item">S</span>
+                                        <span class="picture-item">{{item.fullName}}</span>
                                         <span class="mx-2">{{item.fullName}}</span>
                                     </div>
                                 </div>
@@ -31,7 +31,7 @@
                                         Loading Content Please wait!
                                     </div>
                                     <div class="col-md-12 px-3 py-2 chat-container" *ngIf="!showload">
-                                        
+
                                         <div class="row" *ngFor="let item of getActDoc">
                                             <div class="col-md-12">
                                                 <div class="msg-align-right cursor-pointer mb-2" (click)="downloadFile(item)">
@@ -51,7 +51,7 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                                
+
                                         </div>
                                     </div>
                                 </div>
